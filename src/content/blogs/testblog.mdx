@@ -1,0 +1,26 @@
+---
+title: "Mein zweiter Blogpost"
+date: "2025-02-07"
+description: "Eine kurze Beschreibung des Inhalts zum zweiten mal."
+image: "/images/blog-post-1.jpg"
+---
+
+# Einführung in Node.js Streams
+
+Node.js Streams ermöglichen eine effiziente Verarbeitung großer Datenmengen, ohne den gesamten Speicher zu belegen.
+
+## Arten von Streams
+
+- **Readable Streams:** Lesen von Datenquellen wie Dateien oder HTTP-Requests.
+- **Writable Streams:** Schreiben von Daten in Dateien oder Netzwerkanfragen.
+- **Duplex Streams:** Kombination aus Readable und Writable Streams, z. B. TCP-Sockets.
+- **Transform Streams:** Ändern oder manipulieren von Daten im Stream.
+
+```js
+const fs = require("fs");
+
+const readStream = fs.createReadStream("input.txt", { encoding: "utf-8" });
+const writeStream = fs.createWriteStream("output.txt");
+
+readStream.pipe(writeStream);
+```

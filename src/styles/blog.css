@@ -1,0 +1,39 @@
+.blog-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .blog-content h1, 
+  .blog-content h2, 
+  .blog-content h3 {
+    font-weight: bold;
+    margin-top: 1.5rem;
+  }
+  
+  .blog-content p {
+    margin-bottom: 1rem;
+  }
+  
+  .blog-content blockquote {
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .blog-content code {
+    background-color: #282c34;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .blog-content pre {
+    background-color: #282c34;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+  

@@ -1,0 +1,23 @@
+---
+title: "Mein erster Blogpost"
+date: "2025-02-07"
+description: "Eine kurze Beschreibung des Inhalts."
+image: "img.jpg"
+---
+
+# Optimierung von JavaScript-Rendering
+
+Das Rendern von JavaScript kann die Performance einer Webseite erheblich beeinflussen. In diesem Artikel werden wir uns verschiedene Strategien zur Optimierung ansehen.
+
+## 1. Vermeidung von Reflows
+
+Ein Reflow tritt auf, wenn der Browser das Layout einer Seite neu berechnet. Häufige Ursachen sind:
+
+- Direkte Manipulation von Stileigenschaften (`element.style.height = "100px"`)
+- Zugriff auf `offsetWidth`, `clientHeight` usw., gefolgt von Änderungen am DOM
+
+Lösung: **CSS-Änderungen bündeln und `requestAnimationFrame` nutzen.**
+
+## 2. Verwendung von `useMemo` in React
+
+Wenn eine teure Berechnung in React mehrfach ausgeführt wird, hilft `useMemo`:
