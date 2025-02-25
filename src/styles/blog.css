@@ -1,39 +1,113 @@
+/* Farben definieren – hier kannst du nach Belieben anpassen */
+:root {
+  --bg-color: #121212;            /* dunkler Hintergrund */
+  --container-bg: #1e1e1e;         /* Container-Hintergrund */
+  --text-color: #e0e0e0;           /* Helle Schriftfarbe */
+  --primary-accent: #00ffea;       /* Neon-Zyan als Hauptakzent */
+  --secondary-accent: #ff00e1;     /* Neon-Pink als Hover/zweiter Akzent */
+  --border-color: #00ffea;         /* für Linien und Rahmen */
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: var(--primary-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--secondary-accent);
+}
+
+/* Navbar (Beispiel, passe ggf. an deine Navbar-Komponente an) */
+.navbar, nav {
+  background-color: #1a1a1a;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+.navbar a, nav a {
+  color: var(--primary-accent);
+  margin: 0 15px;
+  font-weight: bold;
+}
+.navbar a:hover, nav a:hover {
+  color: var(--secondary-accent);
+}
+
+/* Haupt-Container */
+.content {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--container-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Blog Content – Anpassung der typografischen Elemente */
 .blog-content {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  .blog-content h1, 
-  .blog-content h2, 
-  .blog-content h3 {
-    font-weight: bold;
-    margin-top: 1.5rem;
-  }
-  
-  .blog-content p {
-    margin-bottom: 1rem;
-  }
-  
-  .blog-content blockquote {
-    border-left: 4px solid #007bff;
-    padding-left: 15px;
-    font-style: italic;
-    color: #555;
-  }
-  
-  .blog-content code {
-    background-color: #282c34;
-    color: #fff;
-    padding: 3px 5px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-  }
-  
-  .blog-content pre {
-    background-color: #282c34;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
-  }
-  
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  padding: 1rem;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  /* Neon-Glow für Überschriften */
+  text-shadow: 0 0 8px var(--primary-accent);
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid var(--primary-accent);
+  padding-left: 15px;
+  font-style: italic;
+  color: #bbb;
+  margin: 1rem 0;
+}
+
+.blog-content code {
+  background-color: #2a2a2a;
+  color: var(--text-color);
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.blog-content pre {
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* Buttons (Beispiel) */
+button {
+  background-color: var(--primary-accent);
+  border: none;
+  color: var(--bg-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover {
+  background-color: var(--secondary-accent);
+  box-shadow: 0 0 10px var(--secondary-accent);
+}

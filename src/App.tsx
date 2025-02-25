@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -8,6 +7,7 @@ import Blog from "./pages/Blog";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BlogPost from "./pages/BlogPostPage";
 import { blogPosts } from "./lib/mdxloader";
+import "./App.css";
 
 
 export default function App() {

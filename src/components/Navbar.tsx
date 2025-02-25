@@ -2,20 +2,19 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 
 export default function NavigationBar({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar className="custom-navbar">
       <Container>
-        {/* Navbar-Brand bleibt links */}
+        {/* Navbar-Brand */}
         <Navbar.Brand onClick={() => setCurrentPage("home")} style={{ cursor: "pointer" }}>
           Navbar
         </Navbar.Brand>
-
-        {/* Nav nach rechts schieben mit ms-auto */}
+        {/* Navigation-Links */}
         <Nav className="ms-auto">
-          <Nav.Link onClick={() => setCurrentPage("home")}>./Home</Nav.Link>
-          <Nav.Link onClick={() => setCurrentPage("about")}>./About</Nav.Link>
-          <Nav.Link onClick={() => setCurrentPage("projects")}>./Projects</Nav.Link>
-          <Nav.Link onClick={() => setCurrentPage("skills")}>./Skills</Nav.Link>
-          <Nav.Link onClick={() => setCurrentPage("blogs")}>./Blogs</Nav.Link>
+          <Nav.Link className="nav-link" onClick={() => setCurrentPage("home")}>./Home</Nav.Link>
+          <Nav.Link className="nav-link" onClick={() => setCurrentPage("about")}>./About</Nav.Link>
+          <Nav.Link className="nav-link" onClick={() => setCurrentPage("projects")}>./Projects</Nav.Link>
+          <Nav.Link className="nav-link" onClick={() => setCurrentPage("skills")}>./Skills</Nav.Link>
+          <Nav.Link className="nav-link" onClick={() => setCurrentPage("blogs")}>./Blogs</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

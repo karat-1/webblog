@@ -10,11 +10,11 @@ interface BlogCardProps {
 
 export default function BlogCard({ title, description, image, slug, setCurrentPage }: BlogCardProps) {
   return (
-    <Card className="h-100 rounded-4" >
-      <Card.Img variant="top" src={image} />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{description}</Card.Text>
+    <Card className="blog-card h-100 rounded-4">
+      <Card.Img variant="top" src={image} className="blog-card-img" />
+      <Card.Body className="blog-card-body">
+        <Card.Title className="blog-card-title">{title}</Card.Title>
+        <Card.Text className="blog-card-text">{description}</Card.Text>
         <Button variant="primary" onClick={() => setCurrentPage(`blog-${slug}`)}>
           Read More
         </Button>
