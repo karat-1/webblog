@@ -1,6 +1,10 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import BlogCard from "../components/BlogCard";
-import { blogPosts } from "../lib/mdxloader";
+import { blogPosts, projects } from "../lib/mdxloader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faYoutube, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import ProjectCard from "../components/ProjectCard";
+
 
 export default function Home({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   return (
@@ -16,39 +20,60 @@ export default function Home({ setCurrentPage }: { setCurrentPage: (page: string
     <Button className="cyberpunk-button" size="lg" onClick={() => setCurrentPage("projects")}>
       See What I'm Building
     </Button>
+
+    {/* Social Links */}
+    <div className="social-links mt-3">
+      <Button
+        variant="outline-light"
+        href="https://github.com/karat-1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="me-2"
+      >
+        <FontAwesomeIcon icon={faGithub} className="me-0" /> 
+      </Button>
+
+      <Button
+        variant="outline-light"
+        href="https://www.youtube.com/@neuraldoggo"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="me-2"
+      >
+        <FontAwesomeIcon icon={faYoutube} className="me-0" /> 
+      </Button>
+
+      <Button
+        variant="outline-light"
+        href="https://x.com/neuraldoggo"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon icon={faXTwitter} className="me-0" />
+      </Button>
+    </div>
   </Container>
 </section>
       {/* Featured Projects Section */}
       <section className="projects-section">
-        <Container>
-          <h2>Featured Projects</h2>
-          <Row className="g-4">
-            <Col md={4}>
-              <div className="project-card">
-                <img src="https://via.placeholder.com/300" alt="Project One" />
-                <h3 className="mt-3">Project One</h3>
-                <p>Tolles Projekt 123</p>
-              </div>
-            </Col>
-            <Col md={4}>
-              <div className="project-card">
-                <img src="https://via.placeholder.com/300" alt="Project Two" />
-                <h3 className="mt-3">Project Two</h3>
-                <p>Ein  richtig krasses 2. projekt</p>
-              </div>
-            </Col>
-            <Col md={4}>
-              <div className="project-card">
-                <img src="https://via.placeholder.com/300" alt="Project Three" />
-                <h3 className="mt-3">Project Three</h3>
-                <p>
-                  Ein spannendes projekt dass ganz viel geld macht ja ja
-                </p>
-              </div>
-            </Col>
+  <Container>
+    <h2>Featured Projects</h2>
+    <Row className="g-4">
+            {projects.map((project) => (
+              <Col key={project.slug} xs={12} md={4}>
+                <BlogCard
+                  title={project.title}
+                  description={project.description || "No description available."}
+                  image={project.image || "https://via.placeholder.com/300"}
+                  slug={project.slug}
+                  setCurrentPage={setCurrentPage}
+                  cardType="project"
+                />
+              </Col>
+            ))}
           </Row>
-        </Container>
-      </section>
+  </Container>
+</section>
 
       {/* Latest Blog Posts Section */}
       <section className="blog-section">
@@ -63,6 +88,7 @@ export default function Home({ setCurrentPage }: { setCurrentPage: (page: string
                   image={post.image || "https://via.placeholder.com/300"}
                   slug={post.slug}
                   setCurrentPage={setCurrentPage}
+                  cardType="blog"
                 />
               </Col>
             ))}

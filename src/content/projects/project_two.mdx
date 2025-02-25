@@ -1,0 +1,45 @@
+---
+title: "A High-Performance VFX Library for Pygame"
+date: "2025-02-25"
+description: "An upcoming open-source VFX library for Pygame, designed to optimize rendering performance and enable advanced effects without GPU shaders."
+image: "src/assets/pyFX.jpg"
+count: "2"
+---
+
+# A High-Performance VFX Library for Pygame
+
+This **VFX library** is an in-development **rendering framework** for **Pygame**, focused on **efficient visual effects** without relying on GPU shaders. Since **Pygame primarily relies on SDL2’s software renderer**, real-time effects like glow, lighting, and blur are often expensive in terms of performance.
+
+By leveraging **caching, batching, and CPU-side optimizations**, this library aims to make advanced visual effects possible while maintaining **smooth performance** in Pygame-based games.
+
+## The Problem with Pygame's Rendering
+
+Pygame’s rendering is mostly **CPU-bound**, which makes effects that normally rely on shaders (such as glow, lighting, and blur) difficult to implement efficiently. Common challenges include:
+
+- **High CPU usage** when applying per-frame effects
+- **No built-in GPU acceleration** for fragment processing
+- **Expensive operations** like per-pixel blending and transformations
+
+## Optimized Rendering Approach
+
+This library tackles these issues by:
+
+- **Batching draw operations** to minimize redundant rendering calls
+- **Effect caching** to reuse precomputed visuals instead of recalculating each frame
+- **Optimized mathematical operations** using **Numba** for CPU-based performance boosts
+- **Software-based post-processing**, such as **blurring, glow effects, and lighting simulations**
+
+While Pygame lacks direct **shader support**, certain performance-intensive calculations (e.g., **procedural effects and pixel manipulation**) can still be accelerated using **Numba** or **OpenCL** where applicable. However, the actual rendering remains CPU-driven due to SDL2's software renderer.
+
+## Features & Capabilities
+
+- **Lighting system** with dynamic glow and shadow effects
+- **Optimized particle rendering** to reduce CPU overhead
+- **Procedural effects**, such as distortion, waves, and color manipulation
+- **Customizable effects** that can be layered and combined
+
+## Open Source Release
+
+This **VFX library will soon be open-sourced**, making it accessible to all developers looking to enhance their Pygame projects with optimized visual effects.
+
+Stay tuned for the public release and documentation!

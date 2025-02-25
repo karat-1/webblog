@@ -4,13 +4,16 @@
 
 
 :root {
-    --bg-gradient: linear-gradient(135deg, #0d1b2a, #2a003d); /* Seitenhintergrund: Dunkelblau bis Dunkellila */
+  --bg-gradient: linear-gradient(135deg, #080c12, #241b2f);
+
     --primary-text: #ffffff;       /* Haupttextfarbe: Weiß */
     --secondary-text: #ffeb3b;     /* Ursprünglich Gelb – wird hier nicht mehr für die Navbar genutzt */
     --hover-text: #00e5ff;         /* Neon-Cyan bei Hover */
     
     /* Neue Variablen für die Navbar */
-    --navbar-bg-gradient: linear-gradient(135deg, #1a0033, #100020); /* Dunkles Violett/Purpur */
+    --navbar-bg-gradient: linear-gradient(135deg, #0e0b12, #050308);
+
+ /* Dunkles Violett/Purpur */
     --navbar-text: #dcdcdc;       /* Dezent hellgrau */
     --navbar-border: #333;        /* Dunkle Linie als Abgrenzung */
     --border-color: var(--secondary-text);  /* Beibehalten für andere Elemente */
@@ -53,7 +56,7 @@
   .custom-navbar,
   nav,
   .navbar {
-    background: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(42, 0, 61, 0.95)) !important;
+    background: linear-gradient(135deg, #121017, #08040c) !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -83,7 +86,14 @@
     color: var(--navbar-text) !important;
   }
   
-  /* Neon-Glow-Trennlinie am unteren Rand */
+  @keyframes flicker {
+    0% { opacity: 1; box-shadow: 0 0 10px #ff4081; }
+    25% { opacity: 0.8; box-shadow: 0 0 8px #ff4081; }
+    50% { opacity: 1; box-shadow: 0 0 12px #ff4081; }
+    75% { opacity: 0.9; box-shadow: 0 0 9px #ff4081; }
+    100% { opacity: 1; box-shadow: 0 0 10px #ff4081; }
+  }
+  
   .custom-navbar::after {
     content: "";
     position: absolute;
@@ -93,8 +103,8 @@
     height: 3px;
     background: #ff4081; /* Neon-Pink */
     box-shadow: 0 0 10px #ff4081;
+    animation: flicker 5.0s infinite alternate ease-in-out;
   }
-
   /* Haupt-Container für den Content */
   .content {
     max-width: 1200px;
@@ -342,5 +352,38 @@
     text-shadow: 
       -1px 0px 1px red,
       1px 0px 1px blue;
+  }
+
+  .content-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #121017;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(255, 64, 129, 0.2);
+  }
+  
+  .content-card .count {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .content-card .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 4px 0;
+  }
+  
+  .content-card .description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .content-card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 8px 8px 0;
   }
   
