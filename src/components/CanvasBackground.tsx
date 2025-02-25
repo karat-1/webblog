@@ -1,16 +1,19 @@
 import { useEffect, useRef } from "react";
 
 export default function CanvasBackground() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     function resizeCanvas() {
+      const canvas = canvasRef.current;
+      if (!canvas) return; // Stellt sicher, dass `canvas` existiert
+    
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
@@ -52,9 +55,10 @@ export default function CanvasBackground() {
     }
 
     const particles: Particle[] = [];
-    const maxConnectionDistance = 200; // Maximale Distanz für Linien
+    const maxConnectionDistance = 200;
 
     function spawnParticle() {
+      if (!canvas) return;
       const x = Math.random() * canvas.width;
       const y = Math.random() * canvas.height;
       particles.push(new Particle(x, y));
@@ -69,7 +73,7 @@ export default function CanvasBackground() {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           if (distance < maxConnectionDistance) {
-            ctx.globalAlpha = 1 - distance / maxConnectionDistance; // Alpha hängt von der Distanz ab
+            ctx.globalAlpha = 1 - distance / maxConnectionDistance;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -79,7 +83,9 @@ export default function CanvasBackground() {
       }
     }
 
+    let animationFrameId: number;
     function animate() {
+      if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = particles.length - 1; i >= 0; i--) {
         const p = particles[i];
@@ -94,13 +100,14 @@ export default function CanvasBackground() {
       if (Math.random() < 0.1) {
         spawnParticle();
       }
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     }
 
     animate();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
