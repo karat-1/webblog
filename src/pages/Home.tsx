@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import BlogCard from "../components/BlogCard";
 import { blogPosts } from "../lib/mdxloader";
@@ -6,28 +5,19 @@ import { blogPosts } from "../lib/mdxloader";
 export default function Home({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   return (
     <div className="home-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-overlay"></div>
-        <Container className="hero-content">
-          <h1 className="display-3">Example Introduction Test</h1>
-          <p className="fs-4">Procastrinator | Professional Ludwig Hater | asdf1213</p>
-          <Button variant="primary" size="lg" onClick={() => setCurrentPage("projects")}>
-            Explore Projects
-          </Button>
-        </Container>
-      </section>
-
-      {/* About Section */}
-      <section className="intro-section">
-        <Container>
-          <h2>About Me</h2>
-          <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
-        </Container>
-      </section>
-
+<section className="hero-section">
+  <div className="hero-overlay"></div>
+  <Container className="hero-content">
+    <h1 className="display-3">Building Games & Breaking Code</h1>
+    <p className="fs-4">
+      Full-stack developer, game tinkerer, and DevOps enthusiast.  
+      Exploring tech, sharing insights, and making things that (mostly) work.
+    </p>
+    <Button className="cyberpunk-button" size="lg" onClick={() => setCurrentPage("projects")}>
+      See What I'm Building
+    </Button>
+  </Container>
+</section>
       {/* Featured Projects Section */}
       <section className="projects-section">
         <Container>

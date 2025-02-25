@@ -1,5 +1,7 @@
 /* Farbvariablen definieren */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
 
 :root {
     --bg-gradient: linear-gradient(135deg, #0d1b2a, #2a003d); /* Seitenhintergrund: Dunkelblau bis Dunkellila */
@@ -16,14 +18,25 @@
   
   /* Globaler Seitenstil */
 
-  html, body {
+  html {
+    min-height: 100%;
+    background: var(--bg-gradient) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  } 
+  
+  body {
     margin: 0;
     padding: 0;
-    background: var(--bg-gradient) !important;
+    background-size: cover;
+    background: transparent;
     color: var(--primary-text);
     font-family: 'Roboto Mono', monospace;
     line-height: 1.6;
+    z-index: -2;
   }
+
   
   /* Links – Standard: (hier wird in der Navbar anders gesetzt) */
   a {
@@ -52,6 +65,7 @@
     text-align: center;
   }
   
+
   /* Spezifische Regel für unsere custom-navbar */
   .custom-navbar .nav-link {
     color: var(--navbar-text) !important;
@@ -84,12 +98,27 @@
   /* Haupt-Container für den Content */
   .content {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 100px auto;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.5); /* leicht transparenter schwarzer Hintergrund */
+    backdrop-filter: blur(2px); /* Weicher Unschärfe-Effekt für den Hintergrund */
     border-radius: 8px;
-  }
-  
+    position: relative;
+    z-index: 0;
+  } 
+
+  /* Der Canvas soll als Hintergrund fungieren */
+  .canvas-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1; /* Stelle sicher, dass es über `body` liegt */
+}
+
+
   /* Hero Section */
   .hero-section {
     background-image: url('https://via.placeholder.com/1920x1080') !important;
@@ -179,21 +208,6 @@
     overflow-x: auto;
   }
   
-  /* Beispiel für Buttons */
-  button {
-    background-color: var(--secondary-text);
-    border: none;
-    color: var(--bg-gradient);
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  button:hover {
-    background-color: var(--hover-text);
-    box-shadow: 0 0 10px var(--hover-text);
-  }
-  
   .blog-card {
     background-color: rgba(0, 0, 0, 0.7); /* Hintergrundfarbe passend zur Seite */
     border: none;
@@ -224,3 +238,109 @@
     font-size: 1rem;
     margin-bottom: 1rem;
   }
+
+  .cyberpunk-button {
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #ff00ff, 0px 0px 20px #00ffff;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cyberpunk-button:hover {
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    box-shadow: 0px 0px 15px #00ffff, 0px 0px 30px #ff00ff;
+  }
+  
+  .cyberpunk-button:active {
+    transform: scale(0.95);
+  }
+  
+  .cyberpunk-button::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.2) 0%, rgba(0, 255, 255, 0.2) 50%);
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .cyberpunk-button:hover::before {
+    top: 0%;
+    left: 0%;
+  }
+
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .about-container h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: cyan; /* Cyberpunk style */
+  }
+  
+  .about-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+  }
+
+  @keyframes subtleJiggle {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-0.5px, 0.5px); }
+    50% { transform: translate(0.5px, -0.5px); }
+    75% { transform: translate(-0.5px, -0.5px); }
+    100% { transform: translate(0, 0); }
+  }
+  
+  .skills-category {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid cyan;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+  
+  /* ✨ Hover Effect: Glowing Border & Scale */
+  .skills-category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 10px cyan;
+    background: rgba(0, 255, 255, 0.1);
+  }
+  
+  /* 🎨 Subtle Glitch Effect (NO TEXT COPIES) */
+  .skills-category h2 {
+    position: relative;
+    color: white;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Just a tiny shift instead of full duplication */
+  .skills-category:hover h2 {
+    animation: subtleJiggle 0.15s infinite;
+    text-shadow: 
+      -1px 0px 1px red,
+      1px 0px 1px blue;
+  }
+  

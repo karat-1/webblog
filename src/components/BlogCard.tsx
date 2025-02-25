@@ -15,7 +15,7 @@ export default function BlogCard({ title, description, image, slug, setCurrentPa
       <Card.Body className="blog-card-body">
         <Card.Title className="blog-card-title">{title}</Card.Title>
         <Card.Text className="blog-card-text">{description}</Card.Text>
-        <Button variant="primary" onClick={() => setCurrentPage(`blog-${slug}`)}>
+        <Button className="cyberpunk-button" onClick={() => setCurrentPage(`blog-${slug}`)}>
           Read More
         </Button>
       </Card.Body>
