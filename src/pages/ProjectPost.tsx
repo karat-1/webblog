@@ -1,6 +1,5 @@
 import { Button, Container } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import matter from "gray-matter";
 import { useEffect } from "react";
 interface ProjectPostProps {
   post: { title: string; content: string };
@@ -9,7 +8,7 @@ interface ProjectPostProps {
 
 export default function ProjectPost({ post, setCurrentPage }: ProjectPostProps) {
   // Parse metadata & content
-  const { content } = matter(post.content);
+  // const { content } = matter(post.content);
 
     useEffect(() => {
       window.scrollTo(0, 0);
@@ -23,7 +22,7 @@ export default function ProjectPost({ post, setCurrentPage }: ProjectPostProps) 
       <h1 className="display-3">{post.title}</h1>
       <hr />
       <article className="blog-content">
-        <ReactMarkdown>{content}</ReactMarkdown>
+        <ReactMarkdown>{post.content}</ReactMarkdown>
       </article>
     </Container>
   );

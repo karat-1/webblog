@@ -16,6 +16,7 @@ export default function Blog({ setCurrentPage }: { setCurrentPage: (page: string
               image={post.image || "https://via.placeholder.com/300"}
               slug={post.slug}
               setCurrentPage={setCurrentPage}
+              cardType="blog"
             />
           </Col>
         ))}

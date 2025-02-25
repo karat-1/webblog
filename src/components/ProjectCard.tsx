@@ -8,7 +8,7 @@ interface ProjectCardProps {
   image?: string; // Optionales Bild
 }
 
-const DEFAULT_IMAGE = "src/assets/img_logo.png"; // Fallback-Bild
+const DEFAULT_IMAGE = "public/assets/img_logo.png"; // Fallback-Bild
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ count, title, description, image }) => {
   const [imgSrc, setImgSrc] = useState(image || DEFAULT_IMAGE);

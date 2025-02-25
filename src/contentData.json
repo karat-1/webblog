@@ -1,0 +1,46 @@
+{
+  "blogPosts": [
+    {
+      "title": "Mein erster Blogpost",
+      "date": "2025-02-07",
+      "description": "Eine kurze Beschreibung des Inhalts.",
+      "image": "img.jpg",
+      "slug": "firstblog",
+      "content": "\r\n# Optimierung von JavaScript-Rendering\r\n\r\nDas Rendern von JavaScript kann die Performance einer Webseite erheblich beeinflussen. In diesem Artikel werden wir uns verschiedene Strategien zur Optimierung ansehen.\r\n\r\n## 1. Vermeidung von Reflows\r\n\r\nEin Reflow tritt auf, wenn der Browser das Layout einer Seite neu berechnet. Häufige Ursachen sind:\r\n\r\n- Direkte Manipulation von Stileigenschaften (`element.style.height = \"100px\"`)\r\n- Zugriff auf `offsetWidth`, `clientHeight` usw., gefolgt von Änderungen am DOM\r\n\r\nLösung: **CSS-Änderungen bündeln und `requestAnimationFrame` nutzen.**\r\n\r\n## 2. Verwendung von `useMemo` in React\r\n\r\nWenn eine teure Berechnung in React mehrfach ausgeführt wird, hilft `useMemo`:\r\n"
+    },
+    {
+      "title": "Mein zweiter Blogpost",
+      "date": "2025-02-07",
+      "description": "Eine kurze Beschreibung des Inhalts zum zweiten mal.",
+      "image": "/images/blog-post-1.jpg",
+      "slug": "testblog",
+      "content": "\r\n# Einführung in Node.js Streams\r\n\r\nNode.js Streams ermöglichen eine effiziente Verarbeitung großer Datenmengen, ohne den gesamten Speicher zu belegen.\r\n\r\n## Arten von Streams\r\n\r\n- **Readable Streams:** Lesen von Datenquellen wie Dateien oder HTTP-Requests.\r\n- **Writable Streams:** Schreiben von Daten in Dateien oder Netzwerkanfragen.\r\n- **Duplex Streams:** Kombination aus Readable und Writable Streams, z. B. TCP-Sockets.\r\n- **Transform Streams:** Ändern oder manipulieren von Daten im Stream.\r\n\r\n```js\r\nconst fs = require(\"fs\");\r\n\r\nconst readStream = fs.createReadStream(\"input.txt\", { encoding: \"utf-8\" });\r\nconst writeStream = fs.createWriteStream(\"output.txt\");\r\n\r\nreadStream.pipe(writeStream);\r\n```\r\n"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Pyco16 – A Lightweight 2D Framework",
+      "date": "2025-02-25",
+      "description": "An overview of Pyco16, a custom framework inspired by Pico-8, built with Pygame and SDL2, featuring LDtk integration.",
+      "image": "/images/pyco16.png",
+      "slug": "project_one",
+      "content": "\r\n# Pyco16 – A Lightweight 2D Framework\r\n\r\n**Pyco16** is a custom **2D game framework** inspired by **Pico-8**, but built with **Pygame** and **SDL2** as its foundation. The goal of Pyco16 is to provide a **lightweight, easy-to-use engine** for small 2D games, without requiring deep optimizations for Pygame’s rendering.\r\n\r\n## Why Pyco16?\r\n\r\nBy default, **Pygame uses SDL2's software renderer**, which often makes optimization a crucial factor in game performance. Pyco16 abstracts away most of these concerns while keeping development **simple and efficient**.\r\n\r\nKey features include:\r\n\r\n- **A modular 2D engine** with built-in game loop management\r\n- **Seamless integration with LDtk**, a powerful level editor\r\n- **Optimized use of SDL2** to improve rendering where possible\r\n- **Minimal dependencies**, keeping the framework lightweight\r\n\r\n## LDtk Integration\r\n\r\nPyco16 comes with **direct support for LDtk** (Level Designer Toolkit), making it easy to import and manage level data. LDtk allows for **quick level creation** while Pyco16 handles efficient rendering and entity management.\r\n\r\n## Screenshots\r\n\r\n![Pyco16 Gameplay Screenshot 1](src/assets/pyco16.png)  \r\n_An example of a level loaded in Pyco16 using LDtk._\r\n\r\n![Pyco16 Gameplay Screenshot 2](src/assets/pyco16_ldtk.png)  \r\n_Sprite rendering and movement in Pyco16._\r\n\r\n## Conclusion\r\n\r\nPyco16 is designed for developers who want to create **small, efficient 2D games** without the overhead of traditional Pygame optimizations. The framework simplifies rendering, input handling, and level management, allowing you to focus on building your game.\r\n\r\nInterested in Pyco16? Stay tuned for updates and tutorials!\r\n"
+    },
+    {
+      "title": "Ichimonji – A Compact Microvania",
+      "date": "2025-02-25",
+      "description": "A tiny interconnected microvania with a dense world design, inspired by classic limitations but without strict constraints.",
+      "image": "/images/Scene_Practise.png",
+      "slug": "project_three",
+      "content": "\r\n# Ichimonji – A Compact Microvania\r\n\r\n**Ichimonji** is a small-scale **microvania**, built around the idea of making an **interconnected world as dense and interesting as possible** within a strict size constraint of **1024x512 pixels**.\r\n\r\nThe name comes from the **Ichimonji attack** in _Sekiro_, a **single, deliberate strike**—which fits the game’s design as the protagonist primarily relies on **one powerful attack** rather than a complex combo system.\r\n\r\n## Design Philosophy\r\n\r\nWhile inspired by **Pico-8-style limitations**, **Ichimonji does not strictly adhere** to them when it comes to:\r\n\r\n- **Functionality** – No artificial memory constraints\r\n- **Graphics & Palette** – A minimal but flexible approach\r\n- **File Size** – Not limited, though still compact by design\r\n\r\nHowever, the game **does** follow a **low-resolution aesthetic** with a **64x64 pixel viewport**, making every design decision matter.\r\n\r\n## Challenges & Approach\r\n\r\nDesigning a **metroidvania-like world** within such a **small space** creates a unique challenge:\r\n\r\n- **No wasted space** – Every screen must serve a purpose\r\n- **Exploration-focused** – A tiny world still needs discovery & surprises\r\n- **Layered movement & progression** – Compact but interconnected\r\n\r\nInstead of sprawling environments, the game emphasizes **tight, well-structured** level design, forcing interesting choices in **navigation, enemy placement, and upgrades**.\r\n\r\n## Development & Release\r\n\r\nIchimonji is still in development, with **most of the core mechanics and engine work complete**. The game is expected to release **later this year**, along with code and tools used in its creation.\r\n\r\n## Screenshots\r\n\r\n![Ichimonji Screenshot 1](screenshot1.jpg)  \r\n_A section of the dense, interconnected world._\r\n\r\n![Ichimonji Screenshot 2](screenshot2.jpg)  \r\n_Combat in action, featuring the single heavy-hitting attack._\r\n\r\n---\r\n\r\nIchimonji is an experiment in **doing more with less**, embracing constraints to create something unique. Stay tuned for more updates!\r\n"
+    },
+    {
+      "title": "A High-Performance VFX Library for Pygame",
+      "date": "2025-02-25",
+      "description": "An upcoming open-source VFX library for Pygame, designed to optimize rendering performance and enable advanced effects without GPU shaders.",
+      "image": "/images/pyFX.jpg",
+      "slug": "project_two",
+      "content": "\r\n# A High-Performance VFX Library for Pygame\r\n\r\nThis **VFX library** is an in-development **rendering framework** for **Pygame**, focused on **efficient visual effects** without relying on GPU shaders. Since **Pygame primarily relies on SDL2’s software renderer**, real-time effects like glow, lighting, and blur are often expensive in terms of performance.\r\n\r\nBy leveraging **caching, batching, and CPU-side optimizations**, this library aims to make advanced visual effects possible while maintaining **smooth performance** in Pygame-based games.\r\n\r\n## The Problem with Pygame's Rendering\r\n\r\nPygame’s rendering is mostly **CPU-bound**, which makes effects that normally rely on shaders (such as glow, lighting, and blur) difficult to implement efficiently. Common challenges include:\r\n\r\n- **High CPU usage** when applying per-frame effects\r\n- **No built-in GPU acceleration** for fragment processing\r\n- **Expensive operations** like per-pixel blending and transformations\r\n\r\n## Optimized Rendering Approach\r\n\r\nThis library tackles these issues by:\r\n\r\n- **Batching draw operations** to minimize redundant rendering calls\r\n- **Effect caching** to reuse precomputed visuals instead of recalculating each frame\r\n- **Optimized mathematical operations** using **Numba** for CPU-based performance boosts\r\n- **Software-based post-processing**, such as **blurring, glow effects, and lighting simulations**\r\n\r\nWhile Pygame lacks direct **shader support**, certain performance-intensive calculations (e.g., **procedural effects and pixel manipulation**) can still be accelerated using **Numba** or **OpenCL** where applicable. However, the actual rendering remains CPU-driven due to SDL2's software renderer.\r\n\r\n## Features & Capabilities\r\n\r\n- **Lighting system** with dynamic glow and shadow effects\r\n- **Optimized particle rendering** to reduce CPU overhead\r\n- **Procedural effects**, such as distortion, waves, and color manipulation\r\n- **Customizable effects** that can be layered and combined\r\n\r\n## Open Source Release\r\n\r\nThis **VFX library will soon be open-sourced**, making it accessible to all developers looking to enhance their Pygame projects with optimized visual effects.\r\n\r\nStay tuned for the public release and documentation!\r\n"
+    }
+  ]
+}

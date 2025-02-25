@@ -7,6 +7,7 @@ import ProjectCard from "../components/ProjectCard";
 
 
 export default function Home({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
+
   return (
     <div className="home-page">
 <section className="hero-section">

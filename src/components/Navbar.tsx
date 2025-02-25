@@ -1,5 +1,5 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../assets/img_logo.png"; // Logo importieren
+import logo from "../../public/images/img_logo.png"; // Logo importieren
 
 export default function NavigationBar({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   return (

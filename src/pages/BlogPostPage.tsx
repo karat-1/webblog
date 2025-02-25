@@ -10,7 +10,7 @@ interface BlogPostProps {
 
 export default function BlogPost({ post, setCurrentPage }: BlogPostProps) {
   // Parse metadata & content
-  const { content } = matter(post.content);
+  // const { content } = matter(post.content);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -23,7 +23,7 @@ export default function BlogPost({ post, setCurrentPage }: BlogPostProps) {
       <h1 className="display-3">{post.title}</h1>
       <hr />
       <article className="blog-content">
-        <ReactMarkdown>{content}</ReactMarkdown>
+        <ReactMarkdown>{post.content}</ReactMarkdown>
       </article>
     </Container>
   );

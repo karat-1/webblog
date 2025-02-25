@@ -5,9 +5,11 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "module": "CommonJS",
     "strict": false,
     "noImplicitAny": false,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "target": "ES2022"
   }
 }
