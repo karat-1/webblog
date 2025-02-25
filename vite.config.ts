@@ -13,7 +13,11 @@ export default defineConfig({
       define: {
         global: "window",
       },
-      plugins: [NodeGlobalsPolyfillPlugin({ buffer: true })], // Aktiviert Buffer
+      plugins: [NodeGlobalsPolyfillPlugin({ buffer: true })],
     },
+  },
+  build: {
+    outDir: "dist", // Ensure Vercel serves this directory
+    assetsDir: "assets", // Keep assets inside a dedicated folder
   },
 });
