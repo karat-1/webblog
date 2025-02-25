@@ -35,9 +35,7 @@ export default function App() {
   const renderPage = () => {
     if (currentPage.startsWith("blog-")) {
       const slug = currentPage.replace("blog-", "");
-      console.log(slug);
       const post = blogPosts.find((p) => p.slug === slug);
-      console.log(post);
       if (!post) return <h1>404 - Blog Post Not Found</h1>;
       return <BlogPost post={post} setCurrentPage={setCurrentPage} />;
     }

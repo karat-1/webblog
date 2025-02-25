@@ -3,7 +3,6 @@ import BlogCard from "../components/BlogCard";
 import { blogPosts, projects } from "../lib/mdxloader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faYoutube, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import ProjectCard from "../components/ProjectCard";
 
 
 export default function Home({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {

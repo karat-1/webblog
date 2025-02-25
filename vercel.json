@@ -1,9 +1,12 @@
 {
-    "routes": [
-      { "src": "/assets/(.*)", "dest": "/assets/$1" },
-      { "src": "/(.*)", "dest": "/index.html" },
-      { "src": "/content/(.*)", "dest": "/content/$1"}
-    ],
-    "outputDirectory": "dist"
-  }
+    "outputDirectory": "dist",
+    "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    }
+  ]
+}
   

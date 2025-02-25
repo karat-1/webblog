@@ -4,7 +4,7 @@ import mdx from "@mdx-js/rollup";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 
 export default defineConfig({
-  base: "./",
+  base: "/",
   plugins: [react()],
   build: {
     outDir: "dist",
