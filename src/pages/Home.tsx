@@ -13,7 +13,7 @@ export default function Home({ setCurrentPage }: { setCurrentPage: (page: string
         <Container className="hero-content">
           <h1 className="display-3">Building Games & Breaking Code</h1>
           <p className="fs-4">
-            Full-stack developer, game tinkerer, and DevOps enthusiast.  
+            Full-stack developer, and Python enthusiast, and game tinkerer.  
             Exploring tech, sharing insights, and making things that (mostly) work.
           </p>
           <Button className="cyberpunk-button" size="lg" onClick={() => setCurrentPage("projects")}>
