@@ -54,7 +54,7 @@ export default function App() {
       case "about":
         return <About />;
       case "projects":
-        return <Projects />;
+        return <Projects setCurrentPage={setCurrentPage}/>;
       case "blogs":
         return <Blog setCurrentPage={setCurrentPage} />;
       case "skills":
